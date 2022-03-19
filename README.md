@@ -5,6 +5,6 @@
 ![Awesomebot](https://github.com/unixorn/1password-op.plugin.zsh/actions/workflows/awesomebot.yml/badge.svg)
 ![Megalinter](https://github.com/unixorn/1password-op.plugin.zsh/actions/workflows/mega-linter.yml/badge.svg)
 
-1Password has a command line tool, `op`, for accessing secrets in your vaults.
+1Password has a command line tool, [op](https://developer.1password.com/docs/cli/get-started/), for accessing secrets in your vaults.
 
 Load the completions for it and its subcommands.
