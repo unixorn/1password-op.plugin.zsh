@@ -21,7 +21,7 @@
 
 1Password has a command line tool, [op](https://developer.1password.com/docs/cli/get-started/), for accessing secrets in your vaults.
 
-This plugin loads the completions for `op` and its subcommands. It has only been tested on `op` version 2.
+This plugin loads the completions for `op` and its subcommands if it finds `op` in your `$PATH`. It has only been tested on `op` version 2, but should work with version 1 as well.
 
 ## Installation
 
