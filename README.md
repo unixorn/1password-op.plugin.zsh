@@ -9,11 +9,10 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [1password-op.plugin.zsh](#1password-oppluginzsh)
-  - [Description](#description)
-  - [Installation](#installation)
-    - [Oh-My-Zsh](#oh-my-zsh)
-    - [Zgenom](#zgenom)
+- [Description](#description)
+- [Installation](#installation)
+  - [Oh-My-Zsh](#oh-my-zsh)
+  - [Zgenom](#zgenom)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
