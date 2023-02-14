@@ -27,7 +27,7 @@ This plugin loads the completions for `op` and its subcommands if it finds `op` 
 ### [Oh-My-Zsh](http://ohmyz.sh/)
 
 1. `cd ~/.oh-my-zsh/custom/plugins`
-2. `git clone git@github.com:1password-op.plugin.zsh 1password-op`
+2. `git clone git@github.com:unixorn/1password-op.plugin.zsh.git 1password-op`
 3. Add `1password-op` to your plugin list - edit `~.zshrc` and change `plugins=(...)` to `plugins=(... 1password-op)`
 
 ### [Zgenom](https://github.com/jandamm/zgenom)
