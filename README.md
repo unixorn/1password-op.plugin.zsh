@@ -1,6 +1,6 @@
 # 1password-op.plugin.zsh
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/license/apache-2-0/)
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Funixorn%2F1password-op.plugin.zsh%2Fbadge%3Fref%3Dmain&style=plastic)](https://actions-badge.atrox.dev/unixorn/1password-op.plugin.zsh/goto?ref=main)
 ![Awesomebot](https://github.com/unixorn/1password-op.plugin.zsh/actions/workflows/awesomebot.yml/badge.svg)
 ![Megalinter](https://github.com/unixorn/1password-op.plugin.zsh/actions/workflows/mega-linter.yml/badge.svg)
@@ -13,6 +13,7 @@
 - [Installation](#installation)
   - [Oh-My-Zsh](#oh-my-zsh)
   - [Zgenom](#zgenom)
+- [Contributors](#contributors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -33,3 +34,12 @@ This plugin loads the completions for `op` and its subcommands if it finds `op` 
 ### [Zgenom](https://github.com/jandamm/zgenom)
 
 Add `zgenom load unixorn/1password-op.plugin.zsh` to your `.zshrc` file in the same function you're doing your other `zgenom load` calls in. Zgenom will handle automatically cloning the plugin for you the next time you do a `zgenom save`.
+
+## Contributors
+
+<a href="https://github.com/unixorn/1password-op.plugin.zsh/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=unixorn/1password-op.plugin.zsh" />
+</a>
+
+Made with [contributors-img](https://contributors-img.web.app).
+
