@@ -13,6 +13,7 @@
 - [Installation](#installation)
   - [Oh-My-Zsh](#oh-my-zsh)
   - [Zgenom](#zgenom)
+- [Contributors](#contributors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -33,3 +34,12 @@ This plugin loads the completions for `op` and its subcommands if it finds `op` 
 ### [Zgenom](https://github.com/jandamm/zgenom)
 
 Add `zgenom load unixorn/1password-op.plugin.zsh` to your `.zshrc` file in the same function you're doing your other `zgenom load` calls in. Zgenom will handle automatically cloning the plugin for you the next time you do a `zgenom save`.
+
+## Contributors
+
+<a href="https://github.com/unixorn/1password-op.plugin.zsh/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=unixorn/1password-op.plugin.zsh" />
+</a>
+
+Made with [contributors-img](https://contributors-img.web.app).
+
