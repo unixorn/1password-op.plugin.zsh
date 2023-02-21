@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 #
-#    Copyright 2022 Joe Block <jpb@unixorn.net>
+#    Copyright 2022-2023 Joe Block <jpb@unixorn.net>
 #
 #    Licensed under the Apache License, Version 2.0 (the "License");
 #    you may not use this file except in compliance with the License.
@@ -16,6 +16,16 @@
 
 if (( $+commands[op] )); then
   if ! $(command -v _op &> /dev/null) ; then
-    eval "$(op completion zsh)"; compdef _op op
+    # Set up a shim function so that until we actually use the 'op' command,
+    # don't bother to load its completions until the first time we actually
+    # use it
+    op() {
+      # Now that we're running 'op', load its completions
+      eval "$(op completion zsh)"; compdef _op op
+      # We can get rid of the shim and execute 'op' directly from now on
+      unfunction "$0"
+      # Execute 'op' binary
+      $0 "$@"
+    }
   fi
 fi
