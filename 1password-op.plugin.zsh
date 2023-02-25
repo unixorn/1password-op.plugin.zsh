@@ -15,17 +15,29 @@
 #    limitations under the License.
 
 if (( $+commands[op] )); then
-  if ! $(command -v _op &> /dev/null) ; then
-    # Set up a shim function so that until we actually use the 'op' command,
-    # don't bother to load its completions until the first time we actually
-    # use it
-    op() {
-      # Now that we're running 'op', load its completions
-      eval "$(op completion zsh)"; compdef _op op
-      # We can get rid of the shim and execute 'op' directly from now on
-      unfunction "$0"
-      # Execute 'op' binary
-      $0 "$@"
-    }
-  fi
+  OP_COMPLETIONS_D="${0:A:h}/completions"
+  # Set up a shim function so that until we actually use the 'op' command,
+  # don't bother to load its completions until the first time we actually
+  # use it
+  op() {
+    # If the completion file is more than a day old, scrub it and
+    # regenerate it - if op was updated, it might have changed the
+    # completion function.
+    #
+    # Do this only on first use of op so we don't slow down every session
+    # start - user may not always use op in a given session
+    find "$OP_COMPLETIONS_D/_op.zsh"  -newermt "24 hours ago" -delete
+    if [[ ! -f "$OP_COMPLETIONS_D/_op.zsh" ]]; then
+      op completion zsh 2> /dev/null > "$OP_COMPLETIONS_D/_op.zsh"
+    fi
+    # Add completions to the FPATH
+    typeset -TUx FPATH fpath
+    fpath=("$OP_COMPLETIONS_D" $fpath)
+
+    # We can get rid of the shim and execute 'op' directly from now on
+    # in this session.
+    unfunction "$0"
+    # Now that completions are ready, execute 'op' binary
+    $0 "$@"
+  }
 fi
