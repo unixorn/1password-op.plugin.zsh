@@ -23,6 +23,8 @@
 
 This plugin loads the completions for `op` and its subcommands if it finds `op` in your `$PATH`. It has only been tested on `op` version 2, but should work with version 1 as well.
 
+The plugin does lazy loading of the `op` completions, and updates them every 5 days by default. If you want a different interval, set `OP_COMPLETIONS_REFRESH_TIME` using standard `find` time syntax - to set it to replace the completions file every 3 days, for example, you'd set it to `+3d`.
+
 ## Installation
 
 ### [Oh-My-Zsh](http://ohmyz.sh/)
