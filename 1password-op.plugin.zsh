@@ -16,6 +16,8 @@
 
 if (( $+commands[op] )); then
   OP_COMPLETIONS_D="${0:A:h}/completions"
+  OP_COMPLETIONS_REFRESH_TIME="${OP_COMPLETIONS_REFRESH_TIME:-+5d}"
+
   # Set up a shim function so that until we actually use the 'op' command,
   # don't bother to load its completions until the first time we actually
   # use it
@@ -26,7 +28,8 @@ if (( $+commands[op] )); then
     #
     # Do this only on first use of op so we don't slow down every session
     # start - user may not always use op in a given session
-    find "$OP_COMPLETIONS_D/_op.zsh"  -newermt "24 hours ago" -delete
+    mkdir -p "$OP_COMPLETIONS_D"
+    find "$OP_COMPLETIONS_D" -name _op.zsh -ctime "${OP_COMPLETIONS_REFRESH_TIME}" -delete
     if [[ ! -f "$OP_COMPLETIONS_D/_op.zsh" ]]; then
       op completion zsh 2> /dev/null > "$OP_COMPLETIONS_D/_op.zsh"
     fi
@@ -36,7 +39,7 @@ if (( $+commands[op] )); then
 
     # We can get rid of the shim and execute 'op' directly from now on
     # in this session.
-    unfunction "$0"
+    unset -f op
     # Now that completions are ready, execute 'op' binary
     $0 "$@"
   }
